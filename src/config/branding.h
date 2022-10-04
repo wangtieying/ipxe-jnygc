@@ -24,9 +24,9 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
  * "iPXE".
  *
  */
-#define PRODUCT_NAME ""
-#define PRODUCT_SHORT_NAME "iPXE"
-#define PRODUCT_URI "https://ipxe.org"
+#define PRODUCT_NAME "Upgrade for DiyGRUBFM 20221004"
+#define PRODUCT_SHORT_NAME "Upgrade for DiyGRUBFM"
+#define PRODUCT_URI "http://ipxe.org"
 
 /*
  * Tag line
