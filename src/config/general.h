@@ -78,7 +78,8 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 #define HTTP_AUTH_BASIC		/* Basic authentication */
 #define HTTP_AUTH_DIGEST	/* Digest authentication */
 //#define HTTP_AUTH_NTLM	/* NTLM authentication */
-//#define HTTP_ENC_PEERDIST	/* PeerDist content encoding */
+//下面的是p2p支持
+#define HTTP_ENC_PEERDIST	/* PeerDist content encoding */
 //#define HTTP_HACK_GCE		/* Google Compute Engine hacks */
 
 /*
@@ -90,46 +91,8 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 #define	CRYPTO_80211_WPA2	/* Add support for stronger WPA cryptography */
 
 /*
- * Command help messages
+ * Name resolution modules
  *
- * iPXE command help messages include a URI constructed from the
- * command name, such as
- *
- *   "See https://ipxe.org/cmd/vcreate for further information"
- *
- * The iPXE web site includes documentation for the commands provided
- * by the iPXE shell, including:
- *
- * - details of the command syntax (e.g. "vcreate --tag <tag>
- *   [--priority <priority>] <trunk interface>").
- *
- * - example usages of the command (e.g. "vcreate --tag 123 net0")
- *
- * - a formal description of the command (e.g. "Create a VLAN network
- *   interface on an existing trunk network interface. The new network
- *   interface will be named by appending a hyphen and the VLAN tag
- *   value to the trunk network interface name.")
- *
- * - details of the possible exit statuses from the command.
- *
- * - links to documentation for related commands (e.g. "vdestroy")
- *
- * - links to documentation for relevant build options (e.g. "VLAN_CMD").
- *
- * - general hints and tips on using the command.
- *
- * If you want to provide your own documentation for all of the
- * commands provided by the iPXE shell, rather than using the existing
- * support infrastructure provided by https://ipxe.org, then you may
- * define a custom URI to be included within command help messages.
- *
- * Note that the custom URI is a printf() format string which must
- * include a format specifier for the command name.
- *
- * [ Please also note that the existing documentation is licensed
- *   under Creative Commons terms which require attribution to the
- *   iPXE project and prohibit the alteration or removal of any
- *   references to "iPXE". ]
  */
 
 #define	DNS_RESOLVER		/* DNS resolver */
@@ -147,7 +110,8 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 //#define	IMAGE_PXE		/* PXE image support */
 //#define	IMAGE_SCRIPT		/* iPXE script image support */
 //#define	IMAGE_BZIMAGE		/* Linux bzImage image support */
-#define	IMAGE_COMBOOT		/* SYSLINUX COMBOOT image support */
+//下面的是bios专用
+//#define	IMAGE_COMBOOT		/* SYSLINUX COMBOOT image support */
 //#define	IMAGE_EFI		/* EFI image support */
 //#define	IMAGE_SDI		/* SDI image support */
 //#define	IMAGE_PNM		/* PNM image support */
@@ -240,4 +204,4 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 #include <config/local/general.h>
 #include LOCAL_NAMED_CONFIG(general.h)
 
-#endif /* CONFIG_BRANDING_H */
+#endif /* CONFIG_GENERAL_H */
