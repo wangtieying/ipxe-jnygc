@@ -14,25 +14,29 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
         with:
-          ref: master
-          
+          fetch-depth: 0
+      - name: Install packages
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt update
+          sudo apt install -y -o Acquire::Retries=50 \
+                           mtools syslinux isolinux \
+                           libc6-dev-i386 libc6-dbg:i386 valgrind    
       - name: install mkisofs
         run: |
           sudo apt install mkisofs
-          
       - name: make for uefi with EMBED
         run: |
           rm -rf ./uefi-EMBED/
           mkdir -p ./uefi-EMBED/
           sh loadefi.sh
-          mv ./src/bin-x86_64-efi/*.efi ./uefi-EMBED/
-     
+          mv ./src/bin-x86_64-efi/*.efi ./uefi-EMBED/          
       - name: make for uefi no EMBED
         run: |
           rm -rf ./uefi/
