@@ -7,9 +7,9 @@ jobs:
   repo-sync:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v3
     - name: repo-sync
-      uses: repo-sync/github-sync@v3
+      uses: repo-sync/github-sync@v2
       with:
         source_repo: "https://github.com/ipxe/ipxe.git"
         source_branch: "master"
